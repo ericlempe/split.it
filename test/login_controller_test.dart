@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:split_it/models/user_model.dart';
+import 'package:split_it/shared/models/user_model.dart';
 import 'package:split_it/modules/login/login_controller.dart';
 import 'package:split_it/modules/login/login_service.dart';
 import 'package:split_it/modules/login/login_state.dart';
@@ -15,7 +15,7 @@ void main() {
     controller = LoginController(service: service, onUpdate: () {});
   });
 
-  test("Testando o Google SignIn retornando sucesso", () async {
+  test("Testando o Google SignIn - Success", () async {
     expect(controller.state, isInstanceOf<LoginStateEmpty>());
     final states = <LoginState>[];
     controller.listen((state) => states.add(state));
@@ -27,7 +27,7 @@ void main() {
     expect(states.length, 2);
   });
 
-  test("Testando o Google SignIn retornando falha", () async {
+  test("Testando o Google SignIn - Failure", () async {
     expect(controller.state, isInstanceOf<LoginStateEmpty>());
     final states = <LoginState>[];
     controller.listen((state) => states.add(state));

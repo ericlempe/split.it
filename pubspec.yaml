@@ -13,11 +13,21 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   google_fonts: ^2.1.0
+
+  #Firebase
   firebase_core: ^1.2.0
   google_sign_in: ^5.0.4
   sign_in_with_apple: ^3.0.0
+
+  #Facilitar os testes
   mocktail: ^0.1.4
+
+  #Facilitar os loadings
   shimmer: ^2.0.0
+
+  #Gerencia de estado
+  mobx: ^2.0.1
+  flutter_mobx: ^2.0.0
 
 dev_dependencies:
   flutter_test:

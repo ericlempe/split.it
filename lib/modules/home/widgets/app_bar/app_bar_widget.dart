@@ -8,7 +8,6 @@ class AppBarWidget extends PreferredSize {
   final UserModel user;
   final VoidCallback onTapAddButton;
 
-
   AppBarWidget({required this.user, required this.onTapAddButton})
       : super(
           preferredSize: Size.fromHeight(298),

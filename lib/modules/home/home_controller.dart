@@ -1,40 +1,30 @@
-import 'package:flutter/cupertino.dart';
+import 'package:mobx/mobx.dart';
 import 'package:split_it/modules/home/home_state.dart';
-
 import 'repositories/home_repository_mock.dart';
 import 'repositories/home_repository.dart';
-import '../../shared/models/event_model.dart';
 
-class HomeController {
-  final List<EventModel> events = [];
+part 'home_controller.g.dart';
+
+class HomeController = _HomeControllerBase with _$HomeController;
+
+abstract class _HomeControllerBase with Store {
   late HomeRepository repository;
-  Function(HomeState state)? onListen;
 
+  @observable
   HomeState state = HomeStateEmpty();
 
-  HomeController({HomeRepository? repository}) {
+  _HomeControllerBase({HomeRepository? repository}) {
     this.repository = repository ?? HomeRepositoryMock();
   }
 
+  @action
   getEvents() async {
-    update(HomeStateLoading());
+    state = HomeStateLoading();
     try {
       final response = await repository.getEvents();
-      events.addAll(response);
-      update(HomeStateSuccess(events: events));
+      state = HomeStateSuccess(events: response);
     } catch (e) {
-      update(HomeStateFailure(message: e.toString()));
+      state = HomeStateFailure(message: e.toString());
     }
-  }
-
-  void update(HomeState state) {
-    this.state = state;
-    if (onListen != null) {
-      onListen!(state);
-    }
-  }
-
-  void listen(Function(HomeState state) onChange) {
-    onListen = onChange;
   }
 }

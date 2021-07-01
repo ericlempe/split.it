@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:split_it/modules/create_split/create_split_controller.dart';
 import 'package:split_it/theme/app_theme.dart';
 
 class CreateSplitAppbarWidget extends PreferredSize {
   final VoidCallback onTapBack;
-  final int actualPage;
+  final CreateSplitController controller;
   final int size;
 
   CreateSplitAppbarWidget({
     required this.onTapBack,
-    required this.actualPage,
+    required this.controller,
     required this.size,
   }) : super(
             preferredSize: Size.fromHeight(60),
@@ -29,17 +31,21 @@ class CreateSplitAppbarWidget extends PreferredSize {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 24),
-                    child: Text.rich(TextSpan(
-                      text: "$actualPage",
-                      style: AppTheme.textStyles.stepperIndicatorPrimary,
-                      children: [
+                    child: Observer(
+                      builder: (_) => Text.rich(
                         TextSpan(
-                          text: " - $size",
-                          style:
-                              AppTheme.textStyles.stepperIndicatorSecondary,
+                          text: "${controller.currentPage + 1}",
+                          style: AppTheme.textStyles.stepperIndicatorPrimary,
+                          children: [
+                            TextSpan(
+                              text: " - $size",
+                              style:
+                                  AppTheme.textStyles.stepperIndicatorSecondary,
+                            ),
+                          ],
                         ),
-                      ],
-                    )),
+                      ),
+                    ),
                   ),
                 ],
               ),

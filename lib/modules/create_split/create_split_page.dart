@@ -1,12 +1,15 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:split_it/modules/create_split/create_split_controller.dart';
-import 'package:split_it/modules/create_split/steps/step_one_page.dart';
-import 'package:split_it/modules/create_split/steps/step_three_page.dart';
-import 'package:split_it/modules/create_split/steps/step_two_page.dart';
+import 'package:flutter/material.dart';
+
 import '../../../theme/app_theme.dart';
-import './widgets/bottom_stepper_bar.dart';
-import './widgets/create_split_appbar.dart';
+import '../../shared/repositories/firebase_repository.dart';
+import 'create_split_controller.dart';
+import 'steps/four/step_four_page.dart';
+import 'steps/step_one_page.dart';
+import 'steps/three/step_three_page.dart';
+import 'steps/two/step_two_page.dart';
+import 'widgets/bottom_stepper_bar.dart';
+import 'widgets/create_split_appbar.dart';
 
 class CreateSplitPage extends StatefulWidget {
   @override
@@ -14,7 +17,7 @@ class CreateSplitPage extends StatefulWidget {
 }
 
 class _CreateSplitPageState extends State<CreateSplitPage> {
-  final controller = CreateSplitController();
+  final controller = CreateSplitController(repository: FirebaseRepository());
 
   late List<Widget> pages;
 
@@ -22,8 +25,9 @@ class _CreateSplitPageState extends State<CreateSplitPage> {
   void initState() {
     pages = [
       StepOnePage(controller: controller),
-      StepTwoPage(),
-      StepThreePage(),
+      StepTwoPage(controller: controller),
+      StepThreePage(createController: controller,),
+      StepFourPage(controller: controller),
     ];
     super.initState();
   }
@@ -46,7 +50,6 @@ class _CreateSplitPageState extends State<CreateSplitPage> {
       bottomNavigationBar: BottomStepperBarWidget(
         controller: controller,
         onTapCancel: () {},
-        onTapNext: controller.nextPage,
       ),
     );
   }

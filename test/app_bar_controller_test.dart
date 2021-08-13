@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mobx/mobx.dart' as mobx;
 import 'package:mocktail/mocktail.dart';
+
 import 'package:split_it/modules/home/repositories/home_repository.dart';
 import 'package:split_it/modules/home/widgets/app_bar/app_bar_controller.dart';
 import 'package:split_it/modules/home/widgets/app_bar/app_bar_state.dart';

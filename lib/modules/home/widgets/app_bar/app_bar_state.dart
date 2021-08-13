@@ -1,4 +1,4 @@
-import 'package:split_it/shared/models/dashboard_model.dart';
+import '../../../../shared/models/dashboard_model.dart';
 
 abstract class AppBarState {}
 

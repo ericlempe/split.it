@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import 'app_theme.dart';
 
 abstract class AppTextStyles {
@@ -29,6 +30,8 @@ abstract class AppTextStyles {
 
   TextStyle get stepperNextButton;
 
+  TextStyle get stepperNextButtonRegular;
+
   TextStyle get stepperNextButtonDisabled;
 
   TextStyle get stepperTitle;
@@ -38,6 +41,10 @@ abstract class AppTextStyles {
   TextStyle get hintTextField;
 
   TextStyle get textField;
+
+  TextStyle get personTileTitle;
+
+  TextStyle get personTileTitleSelected;
 }
 
 class AppTextStylesDefault implements AppTextStyles {
@@ -133,6 +140,13 @@ class AppTextStylesDefault implements AppTextStyles {
       );
 
   @override
+  TextStyle get stepperNextButtonRegular => GoogleFonts.inter(
+        color: AppTheme.colors.stepperNextButtonRegular,
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+      );
+
+  @override
   TextStyle get stepperNextButtonDisabled => GoogleFonts.inter(
         color: AppTheme.colors.stepperNextButtonDisabled,
         fontSize: 12,
@@ -165,5 +179,19 @@ class AppTextStylesDefault implements AppTextStyles {
         color: AppTheme.colors.textField,
         fontSize: 16,
         fontWeight: FontWeight.w500,
+      );
+
+  @override
+  TextStyle get personTileTitle => GoogleFonts.inter(
+        color: AppTheme.colors.button,
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+      );
+
+  @override
+  TextStyle get personTileTitleSelected => GoogleFonts.inter(
+        color: AppTheme.colors.personTileTitleSelected,
+        fontSize: 16,
+        fontWeight: FontWeight.w700,
       );
 }

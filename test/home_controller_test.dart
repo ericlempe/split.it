@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mobx/mobx.dart' as mobx;
 import 'package:mocktail/mocktail.dart';
+
 import 'package:split_it/modules/home/home_controller.dart';
 import 'package:split_it/modules/home/home_state.dart';
 import 'package:split_it/modules/home/repositories/home_repository.dart';
@@ -25,9 +26,8 @@ void main() {
     when(repository.getEvents).thenAnswer(
       (_) async => [
         EventModel(
-          title: 'Evento Teste',
+          name: 'Evento Teste',
           created: DateTime.now(),
-          people: 10,
           value: 100,
         )
       ],

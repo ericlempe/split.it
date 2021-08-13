@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx/mobx.dart';
-import 'package:split_it/modules/login/login_service.dart';
-import 'package:split_it/modules/login/login_state.dart';
-import './widgets/social_button.dart';
+
 import '../../theme/app_theme.dart';
 import 'login_controller.dart';
+import 'login_service.dart';
+import 'login_state.dart';
+import 'widgets/social_button.dart';
 
 class LoginPage extends StatefulWidget {
   @override

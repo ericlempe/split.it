@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shimmer/shimmer.dart';
-import 'package:split_it/modules/home/widgets/icon_dollar_widget.dart';
-import 'package:split_it/modules/home/widgets/loading_widget.dart';
-import 'package:split_it/theme/app_theme.dart';
+import 'package:intl/intl.dart';
+
+import '../../../theme/app_theme.dart';
+import '../widgets/icon_dollar_widget.dart';
+import '../widgets/loading_widget.dart';
 
 class InfoCardWidget extends StatelessWidget {
   final double value;
@@ -54,7 +55,7 @@ class InfoCardWidget extends StatelessWidget {
                 LoadingWidget(size: Size(double.maxFinite, 24)),
               ] else ...[
                 Text(
-                  'R\$ $value',
+                  'R\$ ${NumberFormat.currency(locale: 'pt_BR', symbol: '', decimalDigits: 2).format(value)}',
                   style: textStyle,
                 ),
               ]

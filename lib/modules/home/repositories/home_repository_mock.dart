@@ -1,6 +1,6 @@
-import 'package:split_it/modules/home/repositories/home_repository.dart';
-import 'package:split_it/shared/models/dashboard_model.dart';
-import 'package:split_it/shared/models/event_model.dart';
+import '../../../shared/models/dashboard_model.dart';
+import '../../../shared/models/event_model.dart';
+import 'home_repository.dart';
 
 class HomeRepositoryMock implements HomeRepository {
   @override
@@ -18,63 +18,53 @@ class HomeRepositoryMock implements HomeRepository {
     return [
       EventModel(
         created: DateTime.now(),
-        title: "Churrasco",
+        name: "Churrasco",
         value: 100,
-        people: 2,
       ),
       EventModel(
         created: DateTime.now(),
-        title: "Churrasco",
+        name: "Churrasco",
         value: -20,
-        people: 2,
       ),
       EventModel(
         created: DateTime.now(),
-        title: "Churrasco",
+        name: "Churrasco",
         value: -30,
-        people: 2,
       ),
       EventModel(
         created: DateTime.now(),
-        title: "Churrasco",
+        name: "Churrasco",
         value: 50,
-        people: 2,
       ),
       EventModel(
         created: DateTime.now(),
-        title: "Churrasco",
+        name: "Churrasco",
         value: 10,
-        people: 2,
       ),
       EventModel(
         created: DateTime.now(),
-        title: "Churrasco",
+        name: "Churrasco",
         value: 15.5,
-        people: 2,
       ),
       EventModel(
         created: DateTime.now(),
-        title: "Churrasco",
+        name: "Churrasco",
         value: -94,
-        people: 2,
       ),
       EventModel(
         created: DateTime.now(),
-        title: "Churrasco",
+        name: "Churrasco",
         value: 45,
-        people: 2,
       ),
       EventModel(
         created: DateTime.now(),
-        title: "Churrasco",
+        name: "Churrasco",
         value: 76,
-        people: 2,
       ),
       EventModel(
         created: DateTime.now(),
-        title: "Churrasco",
+        name: "Churrasco",
         value: 11,
-        people: 2,
       ),
     ];
   }

@@ -1,6 +1,7 @@
 import 'package:mobx/mobx.dart';
-import 'package:split_it/modules/login/login_service.dart';
-import 'package:split_it/modules/login/login_state.dart';
+
+import 'login_service.dart';
+import 'login_state.dart';
 
 part 'login_controller.g.dart';
 

@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:split_it/modules/create_split/create_split_controller.dart';
-import 'package:split_it/theme/app_theme.dart';
+import 'package:flutter/material.dart';
+
+import '../../../theme/app_theme.dart';
+import '../create_split_controller.dart';
 
 class CreateSplitAppbarWidget extends PreferredSize {
   final VoidCallback onTapBack;

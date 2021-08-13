@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:split_it/modules/home/widgets/app_bar/app_bar_controller.dart';
-import 'package:split_it/modules/home/widgets/app_bar/app_bar_state.dart';
-import 'package:split_it/modules/home/widgets/info_card_widget.dart';
+import 'package:flutter/material.dart';
+
+import '../app_bar/app_bar_controller.dart';
+import '../app_bar/app_bar_state.dart';
+import '../info_card_widget.dart';
 
 class BottomAppBarWidget extends StatefulWidget {
   @override

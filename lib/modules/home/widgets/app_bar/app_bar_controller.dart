@@ -1,7 +1,8 @@
 import 'package:mobx/mobx.dart';
+
+import '../app_bar/app_bar_state.dart';
 import '../../repositories/home_repository.dart';
 import '../../repositories/home_repository_mock.dart';
-import '../app_bar/app_bar_state.dart';
 
 part 'app_bar_controller.g.dart';
 

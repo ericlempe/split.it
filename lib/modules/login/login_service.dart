@@ -1,5 +1,6 @@
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:split_it/shared/models/user_model.dart';
+
+import '../../shared/models/user_model.dart';
 
 abstract class LoginService {
   Future<UserModel> googleSignIn();
